@@ -1,0 +1,24 @@
+<div class="row">
+	<div *ngIf="isAuthed; else signInToCreateMessage" class="col-xs-12">
+		<button
+			class='btn btn-success'
+			routerLink='/recipes/new'
+			>Create New Recipe</button>
+	</div>
+	<ng-template #signInToCreateMessage>
+		<p>Sign in to create recipes</p>
+	</ng-template>
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-12">
+		<div
+			*ngFor="let recipe of recipes, let i = index"
+			style='cursor: pointer'
+			[routerLink]="[i]"
+			routerLinkActive='active'
+		>
+			<app-recipe-list-item [recipe]="recipe"></app-recipe-list-item>
+		</div>
+	</div>
+</div>

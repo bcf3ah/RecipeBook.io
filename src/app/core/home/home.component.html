@@ -1,0 +1,15 @@
+
+		<div class="container text-center">
+			<h1 class="landing-title">RecipeBook</h1>
+			<h3>Create, Save, and Share Amazing Recipes</h3>
+			<div *ngIf="isAuthenticated; else unAuthenticated" class="button-group">
+				<a routerLink="/recipes" class="btn btn-success">Browse</a>
+			</div>
+			<ng-template #unAuthenticated>
+				<div class="button-group">
+					<!-- <a routerLink="/recipes" class="btn btn-success">Browse</a> -->
+					<a routerLink="/signin" class="btn btn-success">Sign In</a>
+					<a routerLink="/signup" class="btn btn-success">Sign Up</a>
+				</div>
+			</ng-template>
+		</div>

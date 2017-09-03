@@ -1,0 +1,14 @@
+.landing-title{
+	margin-top: 10%;
+}
+
+.button-group{
+	margin: auto;
+}
+
+@media (max-width: 1600px){
+	.button-group{
+		position: relative;
+		left: -10px;
+	}
+}
