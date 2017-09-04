@@ -19,18 +19,6 @@ export class HeaderComponent implements OnInit {
 		this.router.emit(route);
 	}
 
-
-	onSaveData(){
-		this.httpService.saveData(this.recipes).subscribe(
-			(response) => {
-				console.log(response);
-			},
-			(error) => {
-				console.log(error);
-			}
-		)
-	}
-
 	onLogout(){
 		this.authService.logout();
 	}

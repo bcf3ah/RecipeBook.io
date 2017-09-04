@@ -43,8 +43,18 @@ export class RecipeEditComponent implements OnInit {
 		)
 		if(this.editMode){
 			this.recipeService.updateRecipe(this.id, newRecipe); //could also just pass this.recipeForm.value and it'll include everything from the form in one blow!!!
+      this.httpService.saveData(this.recipeService.getRecipes()).subscribe(
+        response => {
+          console.log(response);
+        }
+      );
 		} else {
 			this.recipeService.addRecipe(newRecipe);
+      this.httpService.saveData(this.recipeService.getRecipes()).subscribe(
+        response => {
+          console.log(response);
+        }
+      );
 		}
 
 		this.onCancel();

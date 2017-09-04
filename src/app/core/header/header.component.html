@@ -19,16 +19,10 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
 				<ng-template [ngIf]="!authService.isAuthenticated()">
+          <li><a style="cursor: pointer" routerLink="/signin">Sign in</a></li>
 					<li><a style="cursor: pointer" routerLink="/signup">Sign up</a></li>
-					<li><a style="cursor: pointer" routerLink="/signin">Sign in</a></li>
 				</ng-template>
 				<li *ngIf="authService.isAuthenticated()"><a style="cursor: pointer" (click)="onLogout()">Sign out</a></li>
-        <li class="dropdown" appDropdown *ngIf="authService.isAuthenticated()">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a style="cursor: pointer" (click)="onSaveData()">Save Recipes</a></li>
-          </ul>
-        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
